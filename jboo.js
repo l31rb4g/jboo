@@ -68,7 +68,7 @@ var Element = function(tag, obj){
             var styles = '';
             for (var s in obj[o]){
                 var v = obj[o][s];
-                if (['z-index','opacity'].indexOf(s) == -1) {
+                if (['z-index', 'opacity'].indexOf(s) == -1) {
                     if (!String(v).match(/%$/) && v == parseInt(v)) {
                         v += 'px';
                     }
