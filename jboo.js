@@ -25,6 +25,17 @@ Element.prototype.adopt = function() {
     return this;
 };
 
+if (typeof(jQuery) != 'undefined'){
+    jQuery.fn.extend({
+        'inject': function(target){
+            $(this[0]).appendTo(target);
+        },
+        'adopt': function(target){
+            $(this[0]).append(target);
+        }
+    })
+}
+
 Function.prototype.bind = function(obj){
     var slice = [].slice,
         args = slice.call(arguments, 1),
