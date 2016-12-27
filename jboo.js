@@ -12,6 +12,7 @@
     v0.1
 */
 
+window.jboo = {version: 0.1};
 
 Element.prototype.inject = function(where) {
     $(this).appendTo(where);
@@ -101,4 +102,3 @@ var Element = function(tag, obj){
     }
     return el;
 };
-
