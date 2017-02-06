@@ -9,10 +9,10 @@
     █▄ ▄███ ▄█████████▀   ▀██████▀   ▀██████▀
     ▀▀▀▀▀▀
   -----------------------------------------------
-    v0.1
+    v0.2
 */
 
-window.jboo = {version: 0.1};
+var.jboo = {version: 0.2};
 
 Element.prototype.inject = function(where) {
     $(this).appendTo(where);
