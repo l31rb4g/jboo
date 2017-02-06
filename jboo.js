@@ -12,7 +12,7 @@
     v0.2
 */
 
-var.jboo = {version: 0.2};
+var jboo = {version: 0.2};
 
 Element.prototype.inject = function(where) {
     $(this).appendTo(where);
