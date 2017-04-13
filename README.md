@@ -8,7 +8,7 @@
     █▄ ▄███ ▄█████████▀   ▀██████▀   ▀██████▀
     ▀▀▀▀▀▀
   -----------------------------------------------
-    jQuery Basic Object Orientation - v0.1
+    jQuery Basic Object Orientation - v0.2
 
 
 
