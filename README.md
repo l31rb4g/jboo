@@ -8,7 +8,7 @@
     █▄ ▄███ ▄█████████▀   ▀██████▀   ▀██████▀
     ▀▀▀▀▀▀
   -----------------------------------------------
-    jQuery Basic Object Orientation - v0.2
+    jQuery Basic Object Orientation - v0.3
 
 
 
@@ -31,5 +31,4 @@ Prototype extensions:
     - Function.bind(context)
     - Element.inject(element)
     - Element.adopt(element1[, element2, element3, ...])
-    
     
