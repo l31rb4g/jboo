@@ -31,3 +31,4 @@ Prototype extensions:
     - Function.bind(context)
     - Element.inject(element)
     - Element.adopt(element1[, element2, element3, ...])
+
