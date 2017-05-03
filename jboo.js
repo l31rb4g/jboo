@@ -9,10 +9,10 @@
     █▄ ▄███ ▄█████████▀   ▀██████▀   ▀██████▀
     ▀▀▀▀▀▀
   -----------------------------------------------
-    v0.2
+    v0.3
 */
 
-var jboo = {version: 0.2};
+var jboo = {version: 0.3};
 
 Element.prototype.inject = function(where) {
     $(this).appendTo(where);
@@ -53,7 +53,7 @@ Function.prototype.bind = function(obj){
 var Class = (function(obj){
     var fn = (function(){
         if (typeof(fn.initialize) == 'function'){
-            fn.initialize.apply(fn, arguments);
+            fn.initialize.apply(this, arguments);
         }
         for (var o in obj){
             this[o] = obj[o];
