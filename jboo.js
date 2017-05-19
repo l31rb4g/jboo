@@ -1,18 +1,17 @@
 /*
-         ▄█ ▀█████████▄   ▄██████▄   ▄██████▄
-        ███   ███    ███ ███    ███ ███    ███
-        ███   ███    ███ ███    ███ ███    ███
-        ███  ▄███▄▄▄██▀  ███    ███ ███    ███
-        ███ ▀▀███▀▀▀██▄  ███    ███ ███    ███
-        ███   ███    ██▄ ███    ███ ███    ███
-        ███   ███    ███ ███    ███ ███    ███
-    █▄ ▄███ ▄█████████▀   ▀██████▀   ▀██████▀
-    ▀▀▀▀▀▀
-  -----------------------------------------------
-    v0.3
-*/
+     ▄█ ▀█████████▄   ▄██████▄   ▄██████▄
+     ███   ███    ███ ███    ███ ███    ███
+     ███   ███    ███ ███    ███ ███    ███
+     ███  ▄███▄▄▄██▀  ███    ███ ███    ███
+     ███ ▀▀███▀▀▀██▄  ███    ███ ███    ███
+     ███   ███    ██▄ ███    ███ ███    ███
+     ███   ███    ███ ███    ███ ███    ███
+ █▄ ▄███ ▄█████████▀   ▀██████▀   ▀██████▀
+ ▀▀▀▀▀▀
+ -----------------------------------------------
+ */
 
-var jboo = {version: 0.3};
+var jboo = {version: 0.4};
 
 Element.prototype.inject = function(where) {
     $(this).appendTo(where);
@@ -52,21 +51,21 @@ Function.prototype.bind = function(obj){
 
 var Class = (function(obj){
     var fn = (function(){
-        if (typeof(fn.initialize) == 'function'){
-            fn.initialize.apply(this, arguments);
-        }
         for (var o in obj){
             this[o] = obj[o];
         }
+        this.setOptions = function(options){
+            if (!fn.options){
+                fn.options = {};
+            }
+            for (var opt in options){
+                fn.options[opt] = options[opt];
+            }
+        };
+        if (typeof(fn.initialize) == 'function'){
+            fn.initialize.apply(this, arguments);
+        }
     });
-    fn.setOptions = function(options){
-        if (!fn.options){
-            fn.options = {};
-        }
-        for (var opt in options){
-            fn.options[opt] = options[opt];
-        }
-    };
     for (var o in obj){
         fn[o] = obj[o];
     }
