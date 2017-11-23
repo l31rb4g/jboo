@@ -11,7 +11,7 @@
  -----------------------------------------------
  */
 
-var jboo = {version: 0.5.1};
+var jboo = {version: '0.5.2'};
 
 if (typeof(jQuery) === 'undefined'){
     console.error('jBoo: jQuery not loaded.');
