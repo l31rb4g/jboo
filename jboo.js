@@ -11,9 +11,9 @@
  -----------------------------------------------
  */
 
-var jboo = {version: 0.5};
+var jboo = {version: 0.5.1};
 
-if (typeof(jQuery) == 'undefined'){
+if (typeof(jQuery) === 'undefined'){
     console.error('jBoo: jQuery not loaded.');
 } else {
     Function.prototype.bind = function (obj) {
@@ -55,7 +55,7 @@ if (typeof(jQuery) == 'undefined'){
                     fn.options[opt] = options[opt];
                 }
             };
-            if (typeof(fn.initialize) == 'function') {
+            if (typeof(fn.initialize) === 'function') {
                 fn.initialize.apply(this, arguments);
             }
         });
@@ -68,11 +68,11 @@ if (typeof(jQuery) == 'undefined'){
     var Element = function (tag, obj) {
         var el = $(document.createElement(tag));
         for (var o in obj) {
-            if (o == 'styles') {
+            if (o === 'styles') {
                 var styles = '';
                 for (var s in obj[o]) {
                     var v = obj[o][s];
-                    if (['z-index', 'opacity'].indexOf(s) == -1) {
+                    if (['z-index', 'opacity'].indexOf(s) === -1) {
                         if (!String(v).match(/%$/) && v == parseInt(v)) {
                             v += 'px';
                         }
@@ -80,7 +80,7 @@ if (typeof(jQuery) == 'undefined'){
                     styles += s + ':' + v + ';';
                 }
                 el.attr('style', styles);
-            } else if (o == 'events') {
+            } else if (o === 'events') {
                 for (var e in obj[o]) {
                     el[0].addEventListener(e, obj[o][e]);
                 }
