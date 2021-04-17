@@ -21,6 +21,13 @@ if (typeof(jQuery) === 'undefined'){
         $ = jQuery;
     }
 
+    window.getSize = function(element){
+        return {
+            x: $(this).width(),
+            y: $(this).height(),
+        }
+    }
+
     // bind is deprecated
     Function.prototype.bind = function (obj) {
         var slice = [].slice,
@@ -59,7 +66,9 @@ if (typeof(jQuery) === 'undefined'){
                 return sel[0];
             }
             return null;
-        }
+        },
+
+        getSize: window.getSize,
 
     });
 
@@ -115,4 +124,5 @@ if (typeof(jQuery) === 'undefined'){
         }
         return el;
     };
+
 }
