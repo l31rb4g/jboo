@@ -16,6 +16,11 @@ var jboo = {version: '0.5.2'};
 if (typeof(jQuery) === 'undefined'){
     console.error('jBoo: jQuery not loaded.');
 } else {
+
+    if (typeof(window.$) === 'undefined'){
+        $ = jQuery;
+    }
+
     Function.prototype.bind = function (obj) {
         var slice = [].slice,
             args = slice.call(arguments, 1),
@@ -30,8 +35,12 @@ if (typeof(jQuery) === 'undefined'){
     };
 
     $.fn.extend({
-        inject: function(target) {
-            this.appendTo(target);
+        inject: function(target, where='bottom') {
+            if (where == 'bottom'){
+                this.appendTo(target);
+            } else if (where == 'top') {
+                this.prependTo(target);
+            }
             return this;
         },
         adopt: function() {
