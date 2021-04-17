@@ -35,3 +35,5 @@ Prototype extensions:
 
     - Element.getElement(selector)
 
+    - Element.getSize()
+

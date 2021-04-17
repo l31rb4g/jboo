@@ -63,7 +63,7 @@ if (typeof(jQuery) === 'undefined'){
         getElement: function(selector){
             let sel = this.find(selector);
             if (sel){
-                return sel[0];
+                return $(sel[0]);
             }
             return null;
         },
