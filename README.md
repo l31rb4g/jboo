@@ -1,3 +1,4 @@
+
          ▄█ ▀█████████▄   ▄██████▄   ▄██████▄
         ███   ███    ███ ███    ███ ███    ███
         ███   ███    ███ ███    ███ ███    ███
@@ -28,7 +29,9 @@ Classes:
     
 Prototype extensions:
 
-    - Function.bind(context)
-    - Element.inject(element)
+    - Element.inject(element[, where]) # where can be 'top' or 'bottom'
+
     - Element.adopt(element1[, element2, element3, ...])
+
+    - Element.getElement(selector)
 

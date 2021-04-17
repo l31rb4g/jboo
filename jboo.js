@@ -11,7 +11,7 @@
  -----------------------------------------------
  */
 
-var jboo = {version: '0.5.2'};
+var jboo = {version: '0.6.0'};
 
 if (typeof(jQuery) === 'undefined'){
     console.error('jBoo: jQuery not loaded.');
@@ -21,6 +21,7 @@ if (typeof(jQuery) === 'undefined'){
         $ = jQuery;
     }
 
+    // bind is deprecated
     Function.prototype.bind = function (obj) {
         var slice = [].slice,
             args = slice.call(arguments, 1),
@@ -35,6 +36,7 @@ if (typeof(jQuery) === 'undefined'){
     };
 
     $.fn.extend({
+
         inject: function(target, where='bottom') {
             if (where == 'bottom'){
                 this.appendTo(target);
@@ -43,12 +45,22 @@ if (typeof(jQuery) === 'undefined'){
             }
             return this;
         },
+
         adopt: function() {
             for (var arg in arguments) {
                 this.append(arguments[arg]);
             }
             return this;
+        },
+
+        getElement: function(selector){
+            let sel = this.find(selector);
+            if (sel){
+                return sel[0];
+            }
+            return null;
         }
+
     });
 
     var Class = (function (obj) {
