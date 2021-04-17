@@ -35,5 +35,17 @@ Prototype extensions:
 
     - Element.getElement(selector)
 
+    - Element.setStyle(style, value)
+
+    - Element.getStyles({ style1: value1[, style2: value2, ...] })
+
+    - Element.fx({
+          styles: { style1: value1[, style2: value2, ...] },
+          duration: 150,
+          onComplete: function(){}
+      })
+
+    - Element.blink()
+
     - Element.getSize()
 

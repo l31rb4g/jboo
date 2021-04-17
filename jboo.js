@@ -68,6 +68,19 @@ if (typeof(jQuery) === 'undefined'){
             return null;
         },
 
+        setStyles: function(obj){
+            for (var s in obj) {
+                var v = obj[s];
+                if (['z-index', 'opacity'].indexOf(s) === -1) {
+                    if (!String(v).match(/%$/) && v == parseInt(v)) {
+                        v += 'px';
+                    }
+                }
+                console.log('css', s, v, this);
+                this.css(s, v);
+            }
+        },
+
         /*
          * obj: {
          *  styles: {},
@@ -89,7 +102,7 @@ if (typeof(jQuery) === 'undefined'){
                     }, obj.duration);
                 }, 5);
             }, 50);
-        }
+        },
 
         blink: function(obj){
             this.setStyle('background', 'yellow');
@@ -99,7 +112,7 @@ if (typeof(jQuery) === 'undefined'){
                     background: 'transparent',
                 }
             });
-        }
+        },
 
         getSize: window.getSize,
 
