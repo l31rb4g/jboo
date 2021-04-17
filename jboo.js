@@ -68,6 +68,39 @@ if (typeof(jQuery) === 'undefined'){
             return null;
         },
 
+        /*
+         * obj: {
+         *  styles: {},
+         *  duration: 150,
+         *  onComplete: function(){}
+         * }
+         */
+        fx: function(obj){
+            if (!obj.duration) obj.duration = 150;
+            setTimeout(() => {
+                this.setStyle('transition', obj.duration + 'ms');
+                setTimeout(() => {
+                    this.setStyles(obj.styles);
+                    setTimeout(() => {
+                        this.setStyle('transition', 'none');
+                        if (typeof(obj.onComplete) === 'function'){
+                            obj.onComplete.call(this);
+                        }
+                    }, obj.duration);
+                }, 5);
+            }, 50);
+        }
+
+        blink: function(obj){
+            this.setStyle('background', 'yellow');
+            this.fx({
+                duration: 250,
+                styles: {
+                    background: 'transparent',
+                }
+            });
+        }
+
         getSize: window.getSize,
 
     });
