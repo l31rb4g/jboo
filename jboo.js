@@ -76,7 +76,6 @@ if (typeof(jQuery) === 'undefined'){
                         v += 'px';
                     }
                 }
-                console.log('css', s, v, this);
                 this.css(s, v);
             }
         },
