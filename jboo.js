@@ -68,6 +68,10 @@ if (typeof(jQuery) === 'undefined'){
             return null;
         },
 
+        setStyle: function(style, value){
+            this.css(style, value);
+        },
+
         setStyles: function(obj){
             for (var s in obj) {
                 var v = obj[s];
